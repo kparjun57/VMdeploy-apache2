@@ -72,9 +72,6 @@ resource "azurerm_virtual_machine" "demo-instance" {
   }
   provisioner "remote-exec" {
     inline = [
-      "sudo apt update -y && sudo apt -y install apache2 && sudo systemctl start httpd",
-      "echo '<h1><center>My first website using terraform provisioner</center></h1>' > index.html",
-      "echo '<h1><center>Jorge Gongora</center></h1>' >> index.html",
       "sudo mv index.html /var/www/html/"
     ]
 
